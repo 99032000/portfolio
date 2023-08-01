@@ -11,7 +11,7 @@ export default function HomeLayout({
   return (
     <html>
       <body className={inter.className}>
-        <FollowerProvider>
+        <FollowerProvider visibleScreenWidth={640}>
           <NavBar />
           <section className=" bg-transparent mt-4">{children}</section>
         </FollowerProvider>

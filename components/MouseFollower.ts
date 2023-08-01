@@ -219,10 +219,23 @@ const MousePropertiesContext = createContext(null);
 export const FollowerProvider = ({
   visible,
   children,
+  visibleScreenWidth
 }: {
   visible?: boolean;
   children?: ReactNode;
+    visibleScreenWidth?: number;
 }) => {
+  const [screenwidth, Setscreenwidth] = useState<number>(0);
+  useEffect(() => {
+    Setscreenwidth(window.innerWidth);
+    const handleResize = () => {
+      Setscreenwidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const layerStack = useStack();
   const addLayer = (layerOptions: any) => {
     layerStack.push(layerOptions);
@@ -240,7 +253,7 @@ export const FollowerProvider = ({
   return jsxRuntime.jsxs(MousePropertiesContext.Provider, {
     value: value,
     children: [
-      visible !== false
+      visible !== false && screenwidth >= (visibleScreenWidth ?? 0)
         ? jsxRuntime.jsx(FollowerInitialiserComponent, {
           options: layerStack.peek(),
         })
