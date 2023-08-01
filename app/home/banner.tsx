@@ -22,7 +22,7 @@ function Banner() {
           ease: "easeInOut",
         }}
       >
-        <AiOutlineLike className=" text-blue-700 text-xs" />
+        <AiOutlineLike className=" text-orange-600 opacity-60 text-xs" />
       </motion.div>
     ),
   };
@@ -47,7 +47,7 @@ function Banner() {
         </motion.p>
 
         <motion.h1
-          className="text-5xl font-bold sm:text-7xl text-center text-white bg-transparent text-stroke-1 mix-blend-color-burn z-10"
+          className="text-5xl font-bold sm:text-7xl text-center text-white bg-transparent text-stroke-1 mix-blend-difference z-10"
           initial={{ scale: 0.3 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.3 }}
