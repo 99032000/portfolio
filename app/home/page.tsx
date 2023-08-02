@@ -3,6 +3,8 @@ import Image from "next/image";
 import Banner from "./banner";
 import "./home.css";
 import FeatureWork from "./FeatureWork";
+import Skill from "./Skill";
+import Timeline from "./Timeline";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
         </div>
       </div>
       <FeatureWork />
+      <Skill />
+      <Timeline />
     </main>
   );
 }
