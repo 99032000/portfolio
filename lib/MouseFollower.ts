@@ -243,6 +243,8 @@ export const FollowerProvider = ({
   const removeLayer = () => {
     layerStack.pop();
   };
+
+
   const value = {
     addLayer,
     removeLayer,

@@ -1,14 +1,30 @@
 "use client";
-import Image from "next/image";
-import Banner from "./banner";
+import Banner from "../../components/Banner";
 import "./home.css";
-import FeatureWork from "./FeatureWork";
-import Skill from "./Skill";
+import FeatureWork from "../../components/FeatureWork.ts";
+import Skill from "../../components/Skill";
 import Timeline from "./Timeline";
-
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader from '../../components/Preloader';
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect( () => {
+    (
+      async () => {
+          setTimeout( () => {
+            setIsLoading(false);
+            document.body.style.cursor = 'default'
+            window.scrollTo(0,0);
+          }, 2000)
+      }
+    )()
+  }, [])
   return (
     <main className="min-h-screen">
+       <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
       <Banner />
       <div className=" mx-auto max-w-4xl text-center pt-[60px] pb-40 font-normal lg:flex items-center md:text-2xl text-xl sm:text-left px-4">
         <p className=" text-center">

@@ -1,6 +1,6 @@
 "use client";
-import NavBar from "@/components/layout/NavBar";
-import { FollowerProvider } from "@/components/MouseFollower";
+import NavBar from "@/components/Layout/NavBar";
+import { FollowerProvider } from "@/lib/MouseFollower";
 import { Sono } from "next/font/google";
 const inter = Sono({ subsets: ["latin"] });
 export default function HomeLayout({

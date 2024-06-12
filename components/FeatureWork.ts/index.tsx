@@ -1,5 +1,4 @@
-import { UpdateFollower } from "@/components/MouseFollower";
-import { MouseSettings } from "@/types/mouseFollower";
+import { UpdateFollower } from "@/lib/MouseFollower";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -133,9 +132,9 @@ function FeatureWork() {
   );
 }
 
-function FWHover({ color }: { color: string }) {
+function FWHover({ color }: Readonly<{ color: string }>) {
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full text-white font-normal bg-opacity-60 font-[arial] text-sm">
+    <div className={"flex flex-col justify-center items-center w-full h-full text-white font-normal bg-opacity-60 font-[arial] text-sm"+ ` bg-[${color}]`}>
       <p>view</p>
       <p>case</p>
     </div>

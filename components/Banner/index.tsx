@@ -1,4 +1,4 @@
-import { UpdateFollower } from "@/components/MouseFollower";
+import { UpdateFollower } from "@/lib/MouseFollower";
 import { motion } from "framer-motion";
 import { AiOutlineLike } from "react-icons/ai";
 function Banner() {

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { UpdateFollower } from "../MouseFollower";
+import { UpdateFollower } from "../../lib/MouseFollower";
 import { AiOutlineMenu } from "react-icons/ai";
 import { GrDocumentUser } from "react-icons/gr";
 const NavBar = () => {

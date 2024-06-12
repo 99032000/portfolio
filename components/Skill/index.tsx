@@ -1,4 +1,4 @@
-import { SkillData } from "@/components/SkillData";
+import { SkillData } from "@/components/Skill/SkillData";
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 
