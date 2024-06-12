@@ -5,11 +5,11 @@ import { Sono } from "next/font/google";
 const inter = Sono({ subsets: ["latin"] });
 export default function HomeLayout({
   children, // will be a page or nested layout
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html>
+    <html lang="en">
       <body className={inter.className}>
         <FollowerProvider visibleScreenWidth={640}>
           <NavBar />
