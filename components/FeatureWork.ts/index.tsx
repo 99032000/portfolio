@@ -54,19 +54,19 @@ function FeatureWork() {
               src="/originbuilt.png"
               width={400}
               height={400}
-              alt="angelforest"
+              alt="originbuilt"
               className=" rounded-3xl -z-10 sm:min-w-[400px]"
             />
           </UpdateFollower>
           <div className=" my-auto text-center lg:text-left">
             <h1 className=" md:text-3xl font-bold mb-4 text-2xl">
-              Angel Forest Massage
+              Originbuilt recycle Order system
             </h1>
             <h1 className=" md:text-2xl text-xl font-semibold">
-              React based display website
+              Client ordering and admin system
             </h1>
             <h2 className=" text-slate-700 md:text-2xl text-xl">
-              React Angular Sendgrid Firebase hosting
+              Nextjs, stripe payment, SQS, S3, Postgres, internationalization
             </h2>
           </div>
         </motion.div>
