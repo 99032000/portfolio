@@ -32,11 +32,71 @@ function FeatureWork() {
     }),
   };
   return (
-    <div className=" max-w-6xl mx-auto p-8">
+    <div className=" max-w-6xl mx-auto p-8 mt-8">
+      <div className="flex flex-col gap-6 mb-20 items-center ">
+        <div className="text-5xl font-semibold flex flex-col gap-3 lg:text-6xl">
+          <h2>Featured</h2>
+          <h2 className="main-skills-head tracking-tighter">Projects</h2>
+        </div>
+      </div>
       <UpdateFollower
-        mouseOptions={mouseOptions("pink")}
+        mouseOptions={mouseOptions("#8CA0F0")}
         className="mb-[10vh] "
       >
+        <motion.div
+          className="flex justify-center gap-4 flex-wrap md:flex-nowrap md:justify-start opa mb-32"
+          initial={containerVariants.offscreen}
+          whileInView={containerVariants.onscreen(-10)}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <UpdateFollower mouseOptions={imgMouseOptions("#8CA0F0")}>
+            <Image
+              src="/originbuilt.png"
+              width={400}
+              height={400}
+              alt="angelforest"
+              className=" rounded-3xl -z-10 sm:min-w-[400px]"
+            />
+          </UpdateFollower>
+          <div className=" my-auto text-center lg:text-left">
+            <h1 className=" md:text-3xl font-bold mb-4 text-2xl">
+              Angel Forest Massage
+            </h1>
+            <h1 className=" md:text-2xl text-xl font-semibold">
+              React based display website
+            </h1>
+            <h2 className=" text-slate-700 md:text-2xl text-xl">
+              React Angular Sendgrid Firebase hosting
+            </h2>
+          </div>
+        </motion.div>
+        <motion.div
+          className="flex justify-center gap-4 flex-wrap md:flex-nowrap md:justify-end flex-row-reverse mb-8"
+          initial={containerVariants.offscreen}
+          whileInView={containerVariants.onscreen(10)}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <UpdateFollower mouseOptions={imgMouseOptions("grey")}>
+            <Image
+              src="/iconicgroup.png"
+              width={400}
+              height={400}
+              alt="iconic"
+              className=" rounded-3xl -z-10 sm:min-w-[400px]"
+            />
+          </UpdateFollower>
+          <div className=" my-auto text-center lg:text-left">
+            <h1 className=" md:text-3xl font-bold mb-4 text-2xl">
+              Iconic Fitout Group
+            </h1>
+            <h1 className=" md:text-2xl text-xl font-semibold">
+              WorldPress website
+            </h1>
+            <h2 className=" text-slate-700 md:text-2xl text-xl">
+              AWS hosting S3
+            </h2>
+          </div>
+        </motion.div>
         <motion.div
           className="flex justify-center gap-4 flex-wrap md:flex-nowrap md:justify-start opa"
           initial={containerVariants.offscreen}
@@ -134,7 +194,12 @@ function FeatureWork() {
 
 function FWHover({ color }: Readonly<{ color: string }>) {
   return (
-    <div className={"flex flex-col justify-center items-center w-full h-full text-white font-normal bg-opacity-60 font-[arial] text-sm"+ ` bg-[${color}]`}>
+    <div
+      className={
+        "flex flex-col justify-center items-center w-full h-full text-white font-normal bg-opacity-60 font-[arial] text-sm" +
+        ` bg-[${color}]`
+      }
+    >
       <p>view</p>
       <p>case</p>
     </div>

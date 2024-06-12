@@ -1,0 +1,57 @@
+.logo {
+    display: flex;
+    cursor: pointer;
+
+    p {
+        margin: 0px;
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .name {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-left: 5px;
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+
+        p {
+            position: relative;
+            transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            &:first-child {
+                letter-spacing: -2px;
+            }
+            &:nth-of-type(2) {
+                padding-left: 0.7em;
+            }
+
+            &:nth-of-type(3) {
+                position: absolute;
+                left: 180px;
+                padding-left: 0.3em;
+            }
+        }
+    }
+
+    &:hover {
+        .copyright {
+            transform: rotate(360deg);
+        }
+
+        .name {
+            padding-right: 30px;
+
+            .codeBy {
+                transform: translateX(-100%);
+            }
+
+            .damon {
+                transform: translateX(-105px);
+            }
+
+            .chen {
+                transform: translateX(-105px);
+            }
+        }
+    }
+}

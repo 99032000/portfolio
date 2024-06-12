@@ -1,4 +1,5 @@
-import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 import { SiCodingninjas } from "react-icons/si";
 import {
   VerticalTimeline,
@@ -29,8 +30,19 @@ const workData = [
 ];
 
 function Timeline() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
+
   return (
-    <div className=" max-w-6xl mx-auto mt-[10vh] mb-72">
+    <div
+      ref={container}
+      className=" max-w-6xl mx-auto mt-[10vh] relative flex flex-col"
+    >
       <h1 className=" font-bold mb-8 text-center md:text-6xl text-5xl">
         Working experience
       </h1>
@@ -57,6 +69,9 @@ function Timeline() {
           );
         })}
       </VerticalTimeline>
+      <motion.div style={{ height }} className=" bg-red-500 relative mt-28">
+        <div className=" h-[1550%] w-[120%] left-[-10%] rounded-b-full bg-white z-10 absolute shadow-2xl top-0 "></div>
+      </motion.div>
     </div>
   );
 }
