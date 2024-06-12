@@ -3,7 +3,7 @@ import Banner from "../../components/Banner";
 import "./home.css";
 import FeatureWork from "../../components/FeatureWork.ts";
 import Skill from "../../components/Skill";
-import Timeline from "./Timeline";
+import Timeline from "../../components/Timeline";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from '../../components/Preloader';
