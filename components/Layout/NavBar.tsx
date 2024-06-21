@@ -16,10 +16,12 @@ const NavBar = () => {
         </div>
       </div>
       <div className="flex sm:gap-x-8 gap-x-4 items-center sm:mr-4">
-        <div className="flex items-center gap-x-1">
-          <GrDocumentUser />
-          Resume
-        </div>
+        <a href="/resume.pdf" target="_blank">
+          <div className="flex items-center gap-x-1 cursor-pointer">
+            <GrDocumentUser />
+            Resume
+          </div>
+        </a>
         <UpdateFollower
           mouseOptions={{
             zIndex: -1,
