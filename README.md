@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Damon — AI Portfolio
 
-## Getting Started
+Personal portfolio with a dark futuristic AI design and a built-in AI chat assistant (Gemini) that answers questions about Damon's skills and experience.
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Gemini API (streaming)
+
+## Setup
 
 ```bash
+# 1. Fresh install (required first time — node_modules was installed on Linux)
+rm -rf node_modules && npm install
+
+# 2. Add your API key
+cp .env.local.example .env.local
+# edit .env.local and set GEMINI_API_KEY
+
+# 3. Run
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## AI Chat
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- UI: `src/components/ChatWidget.tsx` — floating widget, streaming responses, suggestion chips
+- API: `src/app/api/chat/route.ts` — edge route calling Gemini `streamGenerateContent` (SSE → plain-text stream)
+- Persona/grounding: `src/lib/profile.ts` — edit `chatSystemPrompt` and `profile` to update both the site content and what the assistant knows
 
-## Learn More
+The key works with Google AI Studio keys or Vertex AI express-mode keys. To use full Vertex AI (service account), swap the fetch URL in `route.ts` to the Vertex endpoint and add OAuth — the rest is unchanged.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then add `GEMINI_API_KEY` in Project → Settings → Environment Variables.
 
-## Deploy on Vercel
+## Customise
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Profile data, experience, projects: `src/lib/profile.ts`
+- Colors/effects: `src/app/globals.css` (`--accent`, `--accent2`)
+- Sections: `src/components/Sections.tsx`
