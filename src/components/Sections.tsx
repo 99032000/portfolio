@@ -160,7 +160,7 @@ export function Contact() {
       <div className="flex flex-wrap items-center justify-center gap-4">
         <a
           href={`mailto:${profile.email}`}
-          className="glow-btn inline-block px-8 py-3 rounded-full text-sm font-semibold text-white"
+          className="glow-btn inline-block max-w-full break-all px-8 py-3 rounded-full text-sm font-semibold text-white"
         >
           {profile.email}
         </a>
