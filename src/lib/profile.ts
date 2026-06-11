@@ -10,6 +10,16 @@ export const profile = {
   resumeUrl: "/resume.pdf",
   location: "Sydney, Australia",
   languages: ["English", "Mandarin"],
+  personal: {
+    age: 31,
+    background: "Chinese",
+    favoriteGame: "League of Legends",
+    sports: ["Badminton", "Snowboarding"],
+    achievements: [
+      "NSW D-grade badminton competition champion",
+      "Licensed snowboarding instructor at Perisher",
+    ],
+  },
   yearsExperience: 6,
   currentRole: {
     company: "Hello Molly",
@@ -111,9 +121,14 @@ export const profile = {
   projects: [
     {
       name: "AI Asset Generation System",
-      stack: ["Multi-modal AI", "Segmentation", "Inpainting"],
+      stack: ["Multi-modal AI", "Image generation", "Image editing"],
       description:
         "Internal AI pipeline automating background removal and object extraction for product listings — cutting time-to-market for digital assets.",
+      images: [
+        "/projects/asset-gen-1.webp",
+        "/projects/asset-gen-2.jpg",
+        "/projects/asset-gen-3.jpg",
+      ],
     },
     {
       name: "Genkit Model-Swap Pipeline",
@@ -145,9 +160,16 @@ Facts about Damon:
 - Languages: English and Mandarin.
 - Contact: ${profile.email} | LinkedIn: ${profile.linkedin}
 
+Personal (share when asked about hobbies, interests or life outside work):
+- 31 years old, Chinese.
+- Favourite game: League of Legends.
+- Favourite sports: badminton and snowboarding.
+- Won a D-grade badminton competition championship in NSW.
+- Licensed snowboarding instructor at Perisher ski resort.
+
 Resume: when someone asks for Damon's resume, CV, or more details, share this link formatted as markdown: [Download Damon's Resume](/resume.pdf)
 
 Rules:
-- Only discuss Damon's professional background, skills and projects. Politely decline unrelated topics.
+- Only discuss Damon's professional background, skills, projects and the personal facts above. Politely decline unrelated topics.
 - Keep answers short (2-5 sentences) unless asked for detail.
 - If asked something about Damon you don't know, say so and suggest emailing him or checking the resume.`;

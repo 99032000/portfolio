@@ -128,22 +128,53 @@ export function Projects() {
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-14">
       <SectionTitle tag="projects" title="Featured Work" />
       <div className="grid md:grid-cols-3 gap-6">
-        {profile.projects.map((p) => (
-          <div key={p.name} className="glass p-6 flex flex-col">
-            <div className="text-2xl mb-4">⚡</div>
-            <h3 className="font-semibold mb-2">{p.name}</h3>
-            <p className="text-sm text-white/60 leading-relaxed flex-1">
-              {p.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {p.stack.map((t) => (
-                <span key={t} className="font-mono text-xs text-cyan-300/80">
-                  {t}
-                </span>
-              ))}
+        {profile.projects.map((p) => {
+          const images = "images" in p ? p.images : undefined;
+          return (
+            <div
+              key={p.name}
+              className="glass p-6 flex flex-col group relative overflow-hidden"
+            >
+              <div className="text-2xl mb-4">⚡</div>
+              <h3 className="font-semibold mb-2">{p.name}</h3>
+              <p className="text-sm text-white/60 leading-relaxed flex-1">
+                {p.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {p.stack.map((t) => (
+                  <span key={t} className="font-mono text-xs text-cyan-300/80">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              {images && (
+                <>
+                  <div className="absolute inset-0 rounded-2xl bg-[#0a0a18]/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none p-3 flex flex-col">
+                    <p className="font-mono text-[11px] text-cyan-300/80 mb-2 shrink-0">
+                      {"// sample outputs"}
+                    </p>
+                    <div className="grid grid-cols-3 gap-2 flex-1 min-h-0">
+                      {images.map((src, i) => (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          key={src}
+                          src={src}
+                          alt={`${p.name} sample ${i + 1}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-top rounded-lg border border-white/10 translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+                          style={{ transitionDelay: `${i * 60}ms` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <span className="absolute top-4 right-4 font-mono text-[10px] text-white/30 group-hover:opacity-0 transition-opacity">
+                    hover ↗
+                  </span>
+                </>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
